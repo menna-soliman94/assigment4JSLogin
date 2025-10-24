@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <div class="signin d-none" id="signin">
+      <div class="container my-5 text-center">
+        <div class="form m-auto p-5">
+          <h1>Smart Login System</h1>
+          <input
+            type="email"
+            class="form-control my-3 rounded-1"
+            placeholder="Enter Your Email"
+            id="signin-email"
+            name="signin-email"
+          />
+          <input
+            type="password"
+            class="form-control my-3 rounded-1"
+            placeholder="Enter Your Password"
+            id="signin-password"
+            name="signin-password"
+          />
+          <p class="text-danger my-3" id="signinError-message"></p>
+
+          <button onclick="signIn()" class="form-control w-100 my-4 py-2">
+            Login
+          </button>
+          <p class="text-white">
+            Don’t have an account?
+            <a id="showSignup" href="#" class="text-white">Sign Up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="signup" id="signup">
+      <div class="container my-5 text-center">
+        <div class="form m-auto p-5">
+          <h1>Smart Login System</h1>
+          <input
+            type="text"
+            class="form-control my-3 rounded-1"
+            placeholder="Enter Your Name"
+            id="signup-name"
+            name="signup-name"
+          />
+          <input
+            type="email"
+            class="form-control my-3 rounded-1"
+            placeholder="Enter Your Email"
+            id="signup-email"
+            name="signup-email"
+          />
+          <input
+            type="password"
+            class="form-control my-3 rounded-1"
+            placeholder="Enter Your Password"
+            id="signup-password"
+            name="signup-password"
+          />
+          <p class="text-success my-3" id="signSuccess-message"></p>
+
+          <p class="text-danger my-3" id="signupError-message"></p>
+          <button onclick="signUp()" class="form-control w-100 my-4 py-2">
+            Sign Up
+          </button>
+          <p class="text-white">
+            Don’t have an account?
+            <a id="showSignin" href="#" class="text-white">Signin</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="home d-none" id="home">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a href="#home" class="navbar-brand text-white">SMART LOGIN </a>
+          <button
+            onclick="logout()"
+            id="logoutBtn"
+            class="btn btn-outline-warning rounded-2 px-2"
+            type="submit"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+      <main>
+        <div class="container d-flex justify-content-center align-items-center">
+          <div class="welcome text-center p-5 w-75 m-auto">
+            <h1></h1>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

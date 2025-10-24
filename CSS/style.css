@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #24353f;
+  font-family: "Titillium Web", sans-serif;
+}
+.signup .container,
+.signin .container {
+  width: 830px;
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+h1 {
+  color: #17a2b8;
+  font-size: 2.5rem;
+}
+
+input.form-control {
+  border: 1px solid #ced4da;
+  background-color: unset;
+  color: white;
+}
+input.form-control:focus {
+  background-color: unset;
+  color: white;
+  box-shadow: none;
+}
+input.form-control::placeholder {
+  color: #ced4da;
+}
+
+button.form-control {
+  background-color: unset;
+  border: 1px solid #17a2b8;
+  color: #17a2b8;
+}
+button.form-control:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+button.form-control:focus {
+  background-color: unset;
+  border: 1px solid #17a2b8;
+  color: #17a2b8;
+}
+.form p a {
+  text-decoration: none;
+}
+.form p a:hover {
+  text-decoration: underline;
+}
+
+.home nav .container button {
+  color: rgba(255, 255, 255, 0.5);
+}
+.home nav {
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+.home main .welcome {
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+.home main .container {
+  height: 550px;
+}
