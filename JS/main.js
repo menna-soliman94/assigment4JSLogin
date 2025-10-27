@@ -11,7 +11,7 @@ var homePage = document.getElementById("home")
 var showSignin = document.getElementById("showSignin")
 var showSignup = document.getElementById("showSignup")
 
-var signSuccessMessage = document.getElementById("signSuccess-message")
+var signupSuccessMessage = document.getElementById("sigupsuccess-message")
 var signinErrorMessage = document.getElementById("signinError-message")
 var signupErrorMessage = document.getElementById("signupError-message")
 
@@ -37,7 +37,7 @@ showSignup.addEventListener("click", function () {
 function signUp() {
 
     signupErrorMessage.textContent = ""
-    signSuccessMessage.textContent = ""
+    signupSuccessMessage.textContent = ""
     var signup = {
         name: signupName.value,
         email: signupEmail.value,
@@ -46,16 +46,19 @@ function signUp() {
 
     if (signup.name == "" || signup.email == "" || signup.password == "") {
         signupErrorMessage.textContent = "All inputs are required"
+
         return
     }
 
-    var existList = JSON.parse(localStorage.getItem("signupArray"))
+    var existList = JSON.parse(localStorage.getItem("signupArray") || "[]")
 
 
     var isExist = existList.some(user => user.email == signup.email)
     if (isExist == true) {
+        console.log("4")
+
         signupErrorMessage.textContent = "Email already exists!"
-        signSuccessMessage.textContent = ""
+        signupSuccessMessage.textContent = ""
         return
     }
 
@@ -64,7 +67,7 @@ function signUp() {
     localStorage.setItem("signupArray", JSON.stringify(signupList))
     console.log(signupList)
 
-    signSuccessMessage.textContent = "Success"
+    signupSuccessMessage.textContent = "Success"
 
     clearSignupValue()
 
@@ -83,7 +86,7 @@ function signIn() {
         return
     }
 
-    var existList = JSON.parse(localStorage.getItem("signupArray"))
+    var existList = JSON.parse(localStorage.getItem("signupArray") || "[]")
 
     var user = existList.find(user => user.email == signinEmail)
     if (!user) {
